@@ -4,6 +4,9 @@ namespace SW_Project.Model
 {
     public class EducationBot
     {
+        public int Id { get; set; }
+
+
         public string Take_Exam_From_Tech_To_Student(Teacher teacher, List<Student> students, Exam Quiz)
         {
 
@@ -64,6 +67,23 @@ namespace SW_Project.Model
               
             }
         }
+
+
+
+
+        // Relationships
+        #region
+        public int ExamId { get; set; }
+        public Exam Exam { get; set; }
+
+
+        public int studentId { get; set; }
+        public Student Student { get; set; }
+
+        public int TeacherId { get; set; }
+        public Teacher Teacher { get; set; }
+
+        #endregion
     }
 }
 

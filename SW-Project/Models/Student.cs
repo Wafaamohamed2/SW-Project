@@ -5,6 +5,8 @@
         //Properties
         #region       
         public int Id { get; set; }
+        public string FingerId { get; set; }
+
         public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
@@ -102,17 +104,24 @@
             Console.WriteLine($"Student Info: ID={student.Id}, Name={student.Name}, Level={student.Level}");
         }
 
-        public void ChatInterface(EducationBot chat)
-        {
-            
-        }
+        //public void ChatInterface(EducationBot chat)
+        //{
 
-       
+        //}
 
+
+
+         // Relationships
+        #region
         // one to one relationship with parent
 
         public Parent parent { get; set; }
 
+        // one to many relationship with attendence
+        public ICollection<Attendence> Attendances { get; set; } = new List<Attendence>();
 
+        // many to many relationship with exam
+        public ICollection<Exam> Exams { get; set; } = new List<Exam>();
+        #endregion
     }
 }

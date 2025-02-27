@@ -38,9 +38,6 @@ namespace SW_Project.Models
         }
 
 
-        // one to one relationship with student
-
-       public Student student { get; set;}
        
         public object ViewSonInf()
         {
@@ -52,6 +49,13 @@ namespace SW_Project.Models
             return $"Notification sent to {Name} about student's grade: {message}";
         }
 
+
+      
+        // one to one relationship with student
+
+        public Student student { get; set;}
+       
+        public int studentId { get; set; }  // foreign key
 
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace SW_Project.Models
+﻿using SW_Project.Model;
+
+namespace SW_Project.Models
 {
     public class Teacher : IUser
     {
@@ -69,7 +71,7 @@
         }
         #endregion
 
-        // many to one relationship with student
-        public List<Student> students { get; set; } = new List<Student>();
+        // many to one relationship with EducationBot
+        public ICollection<EducationBot> EducationBots { get; set; } = new List<EducationBot>();
     }
 }
